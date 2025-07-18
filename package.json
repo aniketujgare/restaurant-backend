@@ -1,0 +1,24 @@
+{
+  "name": "restaurant-backend-own",
+  "version": "1.0.0",
+  "description": "Backend for food ordering app someting like Swiggy/Zomato",
+  "license": "ISC",
+  "author": "Aniket Ujgare",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

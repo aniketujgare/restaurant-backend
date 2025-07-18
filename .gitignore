@@ -1,0 +1,86 @@
+# Node.js
+node_modules/
+npm-debug.log
+.npm/
+.yarn/
+yarn-error.log
+lerna-debug.log*
+
+# Dependency Lock Files (IMPORTANT: UNCOMMENT the one you use to COMMIT IT)
+# Most projects should commit their lock file for consistent installs across environments.
+# package-lock.json
+# yarn.lock
+
+# Runtime data
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts
+dist/
+build/
+# If you use a frontend framework with Node.js backend (e.g., React, Next.js, Vue)
+# .next/         # Next.js build output
+# out/          # Next.js export output
+# public/build/ # Common for frontend assets compiled to public folder
+# client/dist/  # Common for frontend projects nested inside backend
+
+coverage/ # Test coverage reports
+
+# Environment variables
+# CRITICAL: DO NOT COMMIT SENSITIVE DATA
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+.env.staging
+.env.production
+.env.sample # Leave this one commented out IF you want to commit an example .env file
+
+# OS-specific files
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# VS Code specific (workspace settings, user specific files)
+.vscode/
+# Some prefer to share specific VS Code settings like:
+# !.vscode/extensions.json
+# !.vscode/launch.json
+# !.vscode/tasks.json
+# If you uncomment the lines above, remove the general .vscode/ line.
+
+# Editor/IDE specific files
+.idea/ # IntelliJ IDEA
+.project # Eclipse
+.classpath # Eclipse
+.c9/ # Cloud9 (AWS Cloud9)
+*.sublime-project
+*.sublime-workspace
+*.code-workspace # VS Code workspace file
+
+# OS-specific temporary files
+*.swp # Vim swap files
+*.bak # Backup files
+*~ # Emacs temporary files
+*.swo
+
+# Database related (if you have local db files or exports not meant for Git)
+# db/*.sqlite # For SQLite databases
+# *.db # General database files
+# If you generate database backups locally:
+# /db-backups/
+# /data/db/ # MongoDB default data directory
+
+# Uploaded files (if your Express app handles file uploads via Multer, etc.)
+# Typically within a /public or /uploads directory
+/uploads/
+/public/uploads/
+/tmp/uploads/
+
+# Other cache/config files
+.eslintcache # ESLint cache file
+.prettierignore # If distinct from .gitignore
+# .prettierrc # Some prefer to commit this for consistent formatting
