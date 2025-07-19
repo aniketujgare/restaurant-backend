@@ -3,11 +3,13 @@ const {
   loginUser,
   registerUser,
   getUserProfile,
+  updateUserProfile,
 } = require("../controllers/authController");
 const {
   validate,
   registerSchema,
   loginSchema,
+  updatedUserSchema,
 } = require("../utils/validation");
 const { protect } = require("../middleware/authMiddleware");
 const router = express.Router();
@@ -17,6 +19,9 @@ router.post("/register", validate(registerSchema), registerUser);
 router.post("/login", validate(loginSchema), loginUser);
 
 // Protected routes
-router.get("/profile", protect, getUserProfile);
+router
+  .route("/profile")
+  .get(protect, getUserProfile)
+  .patch(protect, validate(updatedUserSchema), updateUserProfile);
 
 module.exports = router;
