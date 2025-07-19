@@ -17,7 +17,7 @@ on:
 
 env:
   REGISTRY: ghcr.io # GitHub Container Registry
-  IMAGE_NAME: ${{ aniketujgare/restaurant-backend }} # Uses your GitHub repo name (e.g., 'your-username/your-repo')
+  IMAGE_NAME: ${{ github.repository }} # Uses your GitHub repo name (e.g., 'your-username/your-repo')
 
 jobs:
   build-and-push-docker:
