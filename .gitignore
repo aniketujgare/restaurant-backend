@@ -84,3 +84,5 @@ Thumbs.db # Windows
 .eslintcache # ESLint cache file
 .prettierignore # If distinct from .gitignore
 # .prettierrc # Some prefer to commit this for consistent formatting
+
+.dockerignore
