@@ -79,7 +79,39 @@ const loginUser = async (req, res) => {
   }
 };
 
+// @desc    Get user profile
+// @route   GET /api/auth/profile
+// @access  Private
+const getUserProfile = async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id);
+
+    if (user) {
+      res.json({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        phone: user.phone,
+        address: user.address,
+        isAdmin: user.isAdmin,
+        isRestaurantOwner: user.isRestaurantOwner,
+        favourites: user.favourites,
+      });
+    } else {
+      res.status(400);
+      throw new Error("User not found");
+    }
+  } catch (error) {
+    res.status(res.statusCode === 200 ? 500 : res.statusCode);
+    res.json({
+      message: error.message,
+      stack: process.env.NODE_ENV === "production" ? null : error.stack,
+    });
+  }
+};
+
 module.exports = {
   registerUser,
   loginUser,
+  getUserProfile,
 };
