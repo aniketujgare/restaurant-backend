@@ -2,13 +2,24 @@ const Joi = require("joi");
 
 // User validation schemas
 const registerSchema = Joi.object({
-  name: Joi.string().min(3).max(50),
+  name: Joi.string().min(3).max(50).required(),
   email: Joi.string().email().required(),
   password: Joi.string().required().min(6),
-  phone: Joi.string().pattern(/^[0-9]{10}$/),
-  address: Joi.string(),
-  isAdmin: Joi.boolean(),
-  isRestaurantOwner: Joi.boolean(),
+  phone: Joi.string()
+    .pattern(/^[0-9]{10}$/)
+    .optional(),
+  address: Joi.object({
+    street: Joi.string().trim().min(3).max(100).optional(),
+    city: Joi.string().trim().min(2).max(50).optional(),
+    state: Joi.string().trim().min(2).max(50).optional(),
+    zipcode: Joi.string()
+      .trim()
+      .pattern(/^[1-9][0-9]{5}$/)
+      .optional(),
+    country: Joi.string().trim().min(2).max(50).optional(),
+  }).optional(),
+  isAdmin: Joi.boolean().optional(),
+  isRestaurantOwner: Joi.boolean().optional(),
 });
 
 const loginSchema = Joi.object({
